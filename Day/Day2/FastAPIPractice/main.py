@@ -10,4 +10,10 @@ def about():
 @app.get("/health")
 def health():
     return {"status":"ok"}
+#POST request
+@app.post("/create")
+def create_something():
+    return {"message":"Created"}
+
+
            
