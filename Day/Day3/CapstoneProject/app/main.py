@@ -3,8 +3,10 @@ from fastapi import FastAPI
 
 from app.config import settings
 from app.database import ping_database
+from app.routers import users
 #Creating FastAPI app instance
 app=FastAPI(title=settings.APP_NAME)
+app.include_router(users.router)
 
 #This function runs once when the server starts. It checks the DB Connection
 @app.on_event("startup")
